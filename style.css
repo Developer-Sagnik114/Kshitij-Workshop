@@ -1,0 +1,398 @@
+:root {
+  --bg: #121212;
+  --text: #fff;
+  --accent: #e50914;
+  --card: #1e1e1e;
+  --light: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 2rem 4rem;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.hero .text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+.hero p {
+  margin: 1rem 0;
+}
+
+.hero button {
+  padding: 0.7rem 1.5rem;
+  background: var(--accent);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.circle-container {
+  width: 400px;
+  height: 500px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 2s ease-in-out infinite;
+  flex: 1;
+  min-width: 250px;
+  overflow: hidden;
+}
+
+.movie-gif {
+  width: 500px;
+  height: 500px;
+  object-fit: fill;
+  border-radius: 50%;
+
+}
+
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#trending {
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: fadeInUp 5s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+#popular {
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: fadeInUp 5s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+#reviews {
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: fadeInUp 5s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+.form-section{
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fadeInUp 5s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+form{
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fadeInUp 5s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+}
+
+.duration {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.4rem;
+  background: var(--accent);
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.card:hover .extras {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.extras {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.watchlist {
+  background-color: #b7363d70;
+  border: 2px solid var(--accent);
+  color: black;
+  width: 40px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 170px;
+  right: 10px;
+}
+
+
+
+.reviews,
+.form-section {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 250px;
+}
+
+.review-card img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top:30px;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #1e1e1e;
+}
+
+form input,
+form textarea {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #252525;
+  color: hsl(0, 100%, 99%);
+  font-family: sans-serif;
+}
+
+form input,
+form textarea:focus{
+    outline: none;
+  border: 1px solid #222; /* Same as background to hide */
+  box-shadow: none;
+}
+
+form button {
+  background: var(--accent);
+  border: none;
+  padding: 0.7rem;
+  color: rgb(255, 245, 245);
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+footer {
+  background: #000;
+  padding: 2rem;
+  text-align: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+footer a {
+  margin: 0 0.5rem;
+  color: var(--text);
+  text-decoration: none;
+  color: grey;
+}
+
+.top-btn {
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  bottom: 1rem;
+  right: 0.6rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .hero svg {
+    margin-top: 2rem;
+  }
+}
+
+.scroll-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: var(--accent);
+  color: white;
+
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
